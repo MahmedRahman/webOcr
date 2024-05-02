@@ -10,9 +10,11 @@ submitBtn.onclick = function () {
 function myFunction() {
   const fileInput = document.getElementById("fileselect").files[0];
 
+  const prompt = document.getElementById("code").value; // Gets the text content from the textarea
+
   let formData = new FormData();
   formData.append("image", fileInput); // Ensure you append the file, not the input element
-  formData.append("prompt", "total");
+  formData.append("prompt", prompt);
 
   fetch(apiUrl, {
     method: "POST",

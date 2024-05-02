@@ -407,3 +407,49 @@ input[type="submit"]{
 	}
 
 }
+
+/* General styling for textarea */
+textarea {
+    width: 90%; /* Responsive width */
+    height: 150px; /* Adequate space for text */
+    padding: 10px; /* Padding inside the textarea */
+    margin-top: 10px; /* Margin for spacing */
+    box-sizing: border-box; /* Includes padding and border in the width and height */
+    border: 2px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #fafafa; /* Light grey background */
+    resize: none; /* Disables resizing */
+    font-family: 'Open Sans', sans-serif; /* Stylish, readable font */
+    font-size: 16px; /* Sufficient size for readability */
+    line-height: 1.5; /* Spacing between lines */
+}
+
+/* Styling for textarea when it
+
+
+/* General styling for button */
+#submit-btn {
+    background-color: #007bff; /* Vibrant blue background */
+    color: white; /* White text for high contrast */
+    font-family: 'Montserrat', sans-serif; /* Stylish, readable font */
+    font-size: 16px; /* Clear, visible text size */
+    padding: 10px 20px; /* Top and bottom padding, left and right padding */
+    border: none; /* No border for a clean look */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover to indicate clickability */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for interactive states */
+    outline: none; /* Removes outline to clean up focus state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+}
+
+/* Hover state for button */
+#submit-btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover for interactive feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Larger shadow for lifted effect */
+}
+
+/* Active state for button */
+#submit-btn:active {
+    background-color: #004085; /* Even darker blue when button is clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reset shadow to simulate pressing down */
+}
