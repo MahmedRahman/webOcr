@@ -9,13 +9,6 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
     return document.getElementById(id);
   }
 
-  // output information
-  function Output(msg) {
-    var m = $id("messages");
-    // m.innerHTML = msg + m.innerHTML;
-    m.innerHTML = msg;
-  }
-
   // file drag hover
   function FileDragHover(e) {
     e.stopPropagation();
@@ -39,11 +32,15 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
 
   // output file information
   function ParseFile(file) {
-    Output(
-      `<p>File information: <strong> ${file.name} </strong>
-			<br /> type: <strong> ${file.type} </strong>
-			<br /> size: <strong> ${file.size} </strong> bytes</p>`
-    );
+    const imagePreview = $id("image-preview");
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      imagePreview.setAttribute("src", e.target.result);
+    };
+
+    reader.readAsDataURL(file);
   }
 
   // initialize

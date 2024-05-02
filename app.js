@@ -28,10 +28,12 @@ function myFunction() {
     })
     .then((data) => {
       // Display data in an HTML element
+      outputElement.style.display = "block";
       outputElement.textContent = JSON.stringify(data, null, 2);
     })
     .catch((error) => {
       console.error("Error:", error);
+      outputElement.style.display = "none";
       outputElement.textContent = "Failed to process request.";
     });
 }
