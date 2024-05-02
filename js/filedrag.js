@@ -9,6 +9,13 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
     return document.getElementById(id);
   }
 
+  // output information
+  function Output(msg) {
+    var m = $id("messages");
+    // m.innerHTML = msg + m.innerHTML;
+    m.innerHTML = msg;
+  }
+
   // file drag hover
   function FileDragHover(e) {
     e.stopPropagation();
@@ -20,6 +27,23 @@ Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
   function FileSelectHandler(e) {
     // cancel event and hover styling
     FileDragHover(e);
+
+    // fetch FileList object
+    var files = e.target.files || e.dataTransfer.files;
+
+    // process all File objects
+    for (var i = 0, f; (f = files[i]); i++) {
+      ParseFile(f);
+    }
+  }
+
+  // output file information
+  function ParseFile(file) {
+    Output(
+      `<p>File information: <strong> ${file.name} </strong>
+			<br /> type: <strong> ${file.type} </strong>
+			<br /> size: <strong> ${file.size} </strong> bytes</p>`
+    );
   }
 
   // initialize
